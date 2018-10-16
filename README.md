@@ -4,7 +4,10 @@
 
 Similar projects:
 
-* [vue-monaco](https://github.com/egoist/vue-monaco/) - requires bundling monaco editor files via webpack and a special webpack plugin. Sometimes this may be undesirable because webpack processing can lead to [issues](https://github.com/Microsoft/monaco-editor-webpack-plugin/issues/17) and because it significantly increases webpack bundle size and build time.
+* [vue-monaco](https://github.com/egoist/vue-monaco/) - requires bundling monaco editor files via webpack and a special webpack plugin. Sometimes this may be undesirable because:
+    * it requires additional webpack configuration
+    * webpack processing can lead to [issues](https://github.com/Microsoft/monaco-editor-webpack-plugin/issues/17)
+    * it can significantly [increase](https://github.com/Microsoft/monaco-editor-webpack-plugin/issues/40) webpack bundle size and build time.
 * [vue-monaco-editor](https://github.com/matt-oconnell/vue-monaco-editor) - supports CDN but isn't maintained.
 
 
