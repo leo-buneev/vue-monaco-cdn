@@ -1,6 +1,6 @@
 # vue-monaco-cdn
 
-[Monaco Editor](https://github.com/Microsoft/monaco-editor) is the code editor that powers VS Code. This project aims to provide simple and lightweight Vue.js component, that downloads editor files lazily from cdn. Heavily inspired by [vue-monaco](https://github.com/egoist/vue-monaco/).
+[Monaco Editor](https://github.com/Microsoft/monaco-editor) is the code editor that powers VS Code. This project aims to provide simple and lightweight Vue.js component, that downloads editor files lazily from cdn. Forked from [vue-monaco](https://github.com/egoist/vue-monaco/) and adjusted to use CDN with minimal setup.
 
 Similar projects:
 
@@ -62,39 +62,17 @@ export default {
 - `theme` - visual theme for editor
 - `options` - [monaco editor additional options](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html)
 
-### Events
-
-| Event              | IStandaloneCodeEditor Event | Parameters                                  |
-|--------------------|-----------------------------|---------------------------------------------|
-| `editorMount`      |                             | IStandaloneCodeEditor                       |
-| `contextMenu`      | onContextMenu               | IEditorMouseEvent                           |
-| `blur`             | onDidBlurEditor             |                                             |
-| `blurText`         | onDidBlurEditorText         |                                             |
-| `configuration`    | onDidBlurEditorText         | IConfigurationChangedEvent                  |
-| `position`         | onDidChangeCursorPosition   | ICursorPositionChangedEvent                 |
-| `selection`        | onDidChangeCursorSelection  | ICursorSelectionChangedEvent                |
-| `model`            | onDidChangeModel            | IModelChangedEvent                          |
-| `change`           | onDidChangeModelContent     | value: string, e: IModelContentChangedEvent |
-| `modelDecorations` | onDidChangeModelDecorations | IModelDecorationsChangedEvent               |
-| `modelLanguage`    | onDidChangeModelLanguage    | IModelLanguageChangedEvent                  |
-| `modelOptions`     | onDidChangeModelOptions     | IModelOptionsChangedEvent                   |
-| `afterDispose`     | onDidDispose                |                                             |
-| `focus`            | onDidFocusEditor            |                                             |
-| `focusText`        | onDidFocusEditorText        |                                             |
-| `layout`           | onDidLayoutChange           | EditorLayoutInfo                            |
-| `scroll`           | onDidScrollChange           | IScrollEvent                                |
-| `keydown`          | onKeyDown                   | IKeyboardEvent                              |
-| `keyup`            | onKeyUp                     | IKeyboardEvent                              |
-| `mouseDown`        | onMouseDown                 | IEditorMouseEvent                           |
-| `mouseLeave`       | onMouseLeave                | IEditorMouseEvent                           |
-| `mouseMove`        | onMouseMove                 | IEditorMouseEvent                           |
-| `mouseUp`          | onMouseUp                   | IEditorMouseEvent                           |
-
 ### Methods
 
 - `getMonaco(): IStandaloneCodeEditor`: Return the [editor instance](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandalonecodeeditor.html).
 
 Use `ref` to interact with the `MonacoEditor` component in order to access methods: `<MonacoEditor ref="editor"></MonacoEditor>`, then `this.$refs.editor.getMonaco()` will be available.
+
+### Events
+
+- `editorMount` - fired after monaco editor was mounted. Recieves monaco instance (`IStandaloneCodeEditor`) as parameter.
+
+For other events, please use `getMonaco()` and subscribe to them directly. See [IStandaloneCodeEditor reference](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandalonecodeeditor.html) for full events list.
 
 ## Author
 
