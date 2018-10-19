@@ -1,12 +1,12 @@
 {
   "name": "vue-monaco-cdn",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve ./example/main.js --open",
     "build": "vue-cli-service build --name vue-monaco-cdn --entry ./src/index.js --target lib",
     "lint": "vue-cli-service lint",
-    "prepublishOnly": "npm run lint && npm run build && npm run styleguide:build && npm run doc:build",
+    "prepublishOnly": "npm run lint && npm run build",
     "test": "vue-cli-service test:unit"
   },
   "dependencies": {
@@ -24,7 +24,6 @@
     "babel-jest": "^23.0.1",
     "dedent": "^0.7.0",
     "vue-cli-plugin-component": "^1.7.1",
-    "vue-styleguidist": "^1.7.13",
     "vue-template-compiler": "^2.5.17"
   },
   "files": [

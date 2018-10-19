@@ -20,12 +20,7 @@ export default {
     },
   },
   async mounted() {
-    try {
-      await monacoLoader.ensureMonacoIsLoaded()
-      this.initMonaco()
-    } catch (e) {
-      console.error('Failure during loading monaco editor:', e)
-    }
+    this.init()
   },
   beforeDestroy() {
     if (this.editor) {
@@ -50,16 +45,24 @@ export default {
     },
     language(newVal) {
       if (this.editor) {
-        window.monaco.editor.setModelLanguage(this.editor.getModel(), newVal)
+        this.editor.setModelLanguage(this.editor.getModel(), newVal)
       }
     },
     theme(newVal) {
       if (this.editor) {
-        window.monaco.editor.setTheme(newVal)
+        this.editor.setTheme(newVal)
       }
     },
   },
   methods: {
+    async init() {
+      try {
+        await monacoLoader.ensureMonacoIsLoaded()
+        this.initMonaco()
+      } catch (e) {
+        console.error('Failure during loading monaco editor:', e)
+      }
+    },
     initMonaco() {
       const options = {
         value: this.value,
