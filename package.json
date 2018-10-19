@@ -34,7 +34,9 @@
   ],
   "keywords": [
     "vue",
-    "component"
+    "component",
+    "monaco",
+    "monaco-editor"
   ],
   "license": "MIT",
   "main": "dist/vue-monaco-cdn.umd.js",
