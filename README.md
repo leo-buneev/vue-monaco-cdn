@@ -70,7 +70,7 @@ Use `ref` to interact with the `MonacoEditor` component in order to access metho
 
 ### Events
 
-- `editorMount` - fired after monaco editor was mounted. Recieves monaco instance (`IStandaloneCodeEditor`) as parameter.
+- `editorDidMount` - fired after monaco editor was mounted. Recieves monaco instance (`IStandaloneCodeEditor`) as parameter. Use this event to customize monaco instance (for example, add new code formatters)
 
 For other events, please use `getMonaco()` and subscribe to them directly. See [IStandaloneCodeEditor reference](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandalonecodeeditor.html) for full events list.
 
