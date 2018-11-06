@@ -1,6 +1,11 @@
 {
   "name": "vue-monaco-cdn",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "description": "Lightweight MonacoEditor component for Vue.js using CDN",
+  "repository": {
+    "url": "https://github.com/leo-buneev/vue-monaco-cdn/",
+    "type": "git"
+  },
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve ./example/main.js --open",
@@ -38,6 +43,7 @@
     "monaco",
     "monaco-editor"
   ],
+  "author": "leo-buneev <buneev.leonid@gmail.com>",
   "license": "MIT",
   "main": "dist/vue-monaco-cdn.umd.js",
   "module": "dist/vue-monaco-cdn.common.min.js"
