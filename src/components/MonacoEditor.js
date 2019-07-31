@@ -8,7 +8,7 @@ export default {
     },
     url: {
       type: String,
-      default: '',
+      default: 'https://unpkg.com/monaco-editor@latest/min',
     },
     language: {
       type: String,
