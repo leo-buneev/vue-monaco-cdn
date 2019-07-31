@@ -6,6 +6,10 @@ export default {
       type: String,
       default: '',
     },
+    url: {
+      type: String,
+      default: '',
+    },
     language: {
       type: String,
       default: 'javascript',
@@ -57,7 +61,7 @@ export default {
   methods: {
     async init() {
       try {
-        await monacoLoader.ensureMonacoIsLoaded()
+        await monacoLoader.ensureMonacoIsLoaded(this.url)
         this.initMonaco()
       } catch (e) {
         console.error('Failure during loading monaco editor:', e)
