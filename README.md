@@ -61,6 +61,7 @@ export default {
 - `language` - programming language that code will be in. [List of supported languages](https://github.com/Microsoft/monaco-languages) 
 - `theme` - visual theme for editor
 - `options` - [monaco editor additional options](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html)
+- `url` - custom CDN url. Default is "https://unpkg.com/browse/monaco-editor@latest/min"
 
 ### Methods
 
