@@ -83,6 +83,12 @@ export default {
           this.$emit('input', value, event)
         }
       })
+      this.editor.onDidBlurEditorWidget(() => {
+        this.$emit('blur');
+      })
+      this.editor.onDidFocusEditorWidget(() => {
+        this.$emit('focus');
+      })
     },
 
     getMonaco() {
