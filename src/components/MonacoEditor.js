@@ -48,8 +48,8 @@ export default {
       }
     },
     language(newVal) {
-      if (this.editor) {
-        this.editor.setModelLanguage(this.editor.getModel(), newVal)
+      if (window.monaco.editor) {
+        window.monaco.editor.setModelLanguage(this.editor.getModel(), newVal)
       }
     },
     theme(newVal) {
