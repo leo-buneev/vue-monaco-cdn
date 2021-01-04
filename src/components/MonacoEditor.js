@@ -53,8 +53,8 @@ export default {
       }
     },
     theme(newVal) {
-      if (this.editor) {
-        this.editor.setTheme(newVal)
+      if (window.monaco.editor) {
+        window.monaco.editor.setTheme(newVal)
       }
     },
   },
