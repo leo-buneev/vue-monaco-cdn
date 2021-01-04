@@ -12,7 +12,8 @@
     "build": "vue-cli-service build --name vue-monaco-cdn --entry ./src/index.js --target lib",
     "lint": "vue-cli-service lint",
     "prepublishOnly": "npm run lint && npm run build",
-    "test": "vue-cli-service test:unit"
+    "test": "vue-cli-service test:unit",
+    "install": "npm run-script build"
   },
   "dependencies": {
     "vue": "^2.5.17"
