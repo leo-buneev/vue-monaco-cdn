@@ -48,13 +48,13 @@ export default {
       }
     },
     language(newVal) {
-      if (this.editor) {
-        this.editor.setModelLanguage(this.editor.getModel(), newVal)
+      if (window.monaco.editor) {
+        window.monaco.editor.setModelLanguage(this.editor.getModel(), newVal)
       }
     },
     theme(newVal) {
-      if (this.editor) {
-        this.editor.setTheme(newVal)
+      if (window.monaco.editor) {
+        window.monaco.editor.setTheme(newVal)
       }
     },
   },
@@ -82,6 +82,12 @@ export default {
         if (this.value !== value) {
           this.$emit('input', value, event)
         }
+      })
+      this.editor.onDidBlurEditorWidget(() => {
+        this.$emit('blur');
+      })
+      this.editor.onDidFocusEditorWidget(() => {
+        this.$emit('focus');
       })
     },
 
