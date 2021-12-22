@@ -1,8 +1,10 @@
 import monacoLoader from '@/services/monaco-loader.js'
+import { h } from 'vue'
+
 export default {
   name: 'MonacoEditor',
   props: {
-    value: {
+    modelValue: {
       type: String,
       default: '',
     },
@@ -26,7 +28,7 @@ export default {
   async mounted() {
     this.init()
   },
-  beforeDestroy() {
+  beforeUnmount() {
     if (this.editor) {
       this.editor.dispose()
     }
@@ -49,13 +51,11 @@ export default {
     },
     language(newVal) {
       if (this.editor) {
-        this.editor.setModelLanguage(this.editor.getModel(), newVal)
+        window.monaco.editor.setModelLanguage(this.editor.getModel(), newVal)
       }
     },
     theme(newVal) {
-      if (this.editor) {
-        this.editor.setTheme(newVal)
-      }
+      window.monaco.editor.setTheme(newVal)
     },
   },
   methods: {
@@ -77,10 +77,10 @@ export default {
 
       this.editor = window.monaco.editor.create(this.$el, options)
       this.$emit('editorDidMount', this.editor)
-      this.editor.onDidChangeModelContent(event => {
+      this.editor.onDidChangeModelContent((event) => {
         const value = this.editor.getValue()
         if (this.value !== value) {
-          this.$emit('input', value, event)
+          this.$emit('update:modelValue', value, event)
         }
       })
     },
@@ -89,7 +89,7 @@ export default {
       return this.editor
     },
   },
-  render(h) {
+  render() {
     return h('div')
   },
 }

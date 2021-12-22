@@ -1,14 +1,16 @@
 <template>
-  <div id="app">
-    Language: <select v-model='language'>
-      <option v-for='o in languageOptions' :key='o' :value='o'>{{o}}</option>
+  <div>
+    Language:
+    <select v-model="language">
+      <option v-for="o in languageOptions" :key="o" :value="o">{{ o }}</option>
     </select>
-    Theme: <select v-model='theme'>
-      <option v-for='o in themeOptions' :key='o' :value='o'>{{o}}</option>
+    Theme:
+    <select v-model="theme">
+      <option v-for="o in themeOptions" :key="o" :value="o">{{ o }}</option>
     </select>
-    <br/>
-    <br/>
-    <MonacoEditor class='editor' :theme='theme' :language='language' v-model='sampleCode' />
+    <br />
+    <br />
+    <MonacoEditor class="editor" :theme="theme" :language="language" v-model="sampleCode" />
   </div>
 </template>
 
