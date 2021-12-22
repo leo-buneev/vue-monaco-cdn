@@ -1,6 +1,6 @@
 # vue-monaco-cdn
 
-**This is a version for Vue3. To use please use `vue-monaco-cdn^1.0.0`**
+**This is a version for Vue3. To get version for Vue2, please use `vue-monaco-cdn^1.0.0` (branch v1.x)**
 
 [Monaco Editor](https://github.com/Microsoft/monaco-editor) is the code editor that powers VS Code. This project aims to provide simple and lightweight Vue.js component, that downloads editor files lazily from cdn. Forked from [vue-monaco](https://github.com/egoist/vue-monaco/) and adjusted to use CDN with minimal setup.
 
