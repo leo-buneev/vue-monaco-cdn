@@ -70,7 +70,7 @@ describe('MonacoEditor.js', () => {
   test('editor code update should trigger input event', async () => {
     const editorInstance = resetEditorMock()
     let modelChangedHandler = null
-    editorInstance.onDidChangeModelContent = jest.fn(handler => (modelChangedHandler = handler))
+    editorInstance.onDidChangeModelContent = jest.fn((handler) => (modelChangedHandler = handler))
     editorInstance.getValue = jest.fn(() => 'code')
     const meInstance = shallowMount(MonacoEditor)
     await meInstance.vm.$nextTick()

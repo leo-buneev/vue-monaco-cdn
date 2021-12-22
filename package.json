@@ -1,6 +1,6 @@
 {
   "name": "vue-monaco-cdn",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Lightweight MonacoEditor component for Vue.js using CDN",
   "repository": {
     "url": "https://github.com/leo-buneev/vue-monaco-cdn/",
@@ -15,7 +15,7 @@
     "test": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "vue": "^3.2.26"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
