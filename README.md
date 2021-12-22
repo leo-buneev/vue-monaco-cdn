@@ -1,5 +1,7 @@
 # vue-monaco-cdn
 
+**This is a version for Vue3. To use please use `vue-monaco-cdn^1.0.0`**
+
 [Monaco Editor](https://github.com/Microsoft/monaco-editor) is the code editor that powers VS Code. This project aims to provide simple and lightweight Vue.js component, that downloads editor files lazily from cdn. Forked from [vue-monaco](https://github.com/egoist/vue-monaco/) and adjusted to use CDN with minimal setup.
 
 Similar projects:
@@ -57,7 +59,7 @@ export default {
 
 ### Props
 
-- `value` - code
+- `modelValue` - code
 - `language` - programming language that code will be in. [List of supported languages](https://github.com/Microsoft/monaco-languages) 
 - `theme` - visual theme for editor
 - `options` - [monaco editor additional options](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html)
@@ -72,6 +74,7 @@ Use `ref` to interact with the `MonacoEditor` component in order to access metho
 ### Events
 
 - `editorDidMount` - fired after monaco editor was mounted. Recieves monaco instance (`IStandaloneCodeEditor`) as parameter. Use this event to customize monaco instance (for example, add new code formatters)
+- `update:modelValue` - fired whenever user changes editor content
 
 For other events, please use `getMonaco()` and subscribe to them directly. See [IStandaloneCodeEditor reference](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandalonecodeeditor.html) for full events list.
 
