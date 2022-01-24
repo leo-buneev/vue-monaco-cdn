@@ -42,7 +42,7 @@ export default {
         }
       },
     },
-    value(newValue) {
+    modelValue(newValue) {
       if (this.editor) {
         if (newValue !== this.editor.getValue()) {
           this.editor.setValue(newValue)
@@ -69,7 +69,7 @@ export default {
     },
     initMonaco() {
       const options = {
-        value: this.value,
+        value: this.modelValue,
         theme: this.theme,
         language: this.language,
         ...this.options,
@@ -79,7 +79,7 @@ export default {
       this.$emit('editorDidMount', this.editor)
       this.editor.onDidChangeModelContent((event) => {
         const value = this.editor.getValue()
-        if (this.value !== value) {
+        if (this.modelValue !== value) {
           this.$emit('update:modelValue', value, event)
         }
       })

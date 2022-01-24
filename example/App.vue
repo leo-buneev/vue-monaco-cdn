@@ -10,7 +10,13 @@
     </select>
     <br />
     <br />
-    <MonacoEditor class="editor" :theme="theme" :language="language" v-model="sampleCode" />
+    <MonacoEditor
+      :model-value="sampleCode"
+      class="editor"
+      :theme="theme"
+      :language="language"
+      @update:model-value="(v) => (sampleCode = v)"
+    />
   </div>
 </template>
 
