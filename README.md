@@ -60,9 +60,9 @@ export default {
 ### Props
 
 - `modelValue` - code
-- `language` - programming language that code will be in. [List of supported languages](https://github.com/Microsoft/monaco-languages) 
+- `language` - programming language that code will be in. [List of supported languages](https://github.com/Microsoft/monaco-languages)
 - `theme` - visual theme for editor
-- `options` - [monaco editor additional options](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html)
+- `options` - [monaco editor additional options](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorConstructionOptions.html)
 - `url` - custom CDN url. Default is "https://unpkg.com/browse/monaco-editor@latest/min". Note, that URL must point to a folder, under which path "/vs/base/worker/workerMain.js" must exist.
 
 ### Methods
@@ -76,7 +76,7 @@ Use `ref` to interact with the `MonacoEditor` component in order to access metho
 - `editorDidMount` - fired after monaco editor was mounted. Recieves monaco instance (`IStandaloneCodeEditor`) as parameter. Use this event to customize monaco instance (for example, add new code formatters)
 - `update:modelValue` - fired whenever user changes editor content
 
-For other events, please use `getMonaco()` and subscribe to them directly. See [IStandaloneCodeEditor reference](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandalonecodeeditor.html) for full events list.
+For other events, please use `getMonaco()` and subscribe to them directly. See [IStandaloneCodeEditor reference](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html) for full events list.
 
 ## Author
 
